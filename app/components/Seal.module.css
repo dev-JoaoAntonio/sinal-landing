@@ -1,0 +1,30 @@
+.seal {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Slow, gentle rotation of the perforation could be added; kept static for calm. */
+
+.check {
+  stroke-dasharray: 90;
+  stroke-dashoffset: 0;
+}
+
+/* Quando animado, o check é "carimbado": desenha o traço na entrada */
+.animated .check {
+  stroke-dashoffset: 90;
+  animation: draw-check 0.7s var(--ease-out) 0.15s forwards;
+}
+
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated .check {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

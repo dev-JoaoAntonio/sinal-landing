@@ -1,0 +1,57 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-speed, 34s) linear infinite;
+  will-change: transform;
+}
+.reverse {
+  animation-direction: reverse;
+}
+
+.copy {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1.05rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.word {
+  opacity: 0.9;
+}
+
+/* separador: bolinha na cor da marca */
+.dot {
+  margin: 0 0.7em;
+  color: #f0a9b9; /* cereja clareado, contrasta no grafite */
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

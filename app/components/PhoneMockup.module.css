@@ -1,0 +1,214 @@
+.wrap {
+  position: relative;
+  width: min(320px, 84vw);
+  margin-inline: auto;
+  filter: drop-shadow(var(--shadow-lg));
+}
+
+.phone {
+  position: relative;
+  background: var(--grafite);
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow: inset 0 0 0 2px rgba(250, 246, 242, 0.06);
+}
+
+.notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 116px;
+  height: 22px;
+  background: var(--grafite);
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+}
+
+.screen {
+  background: var(--creme);
+  border-radius: 34px;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 6px 4px 2px;
+}
+.appbarTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--grafite);
+}
+.appbarDate {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+/* Card de confirmação (destaque cereja) */
+.confirmCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cereja);
+  color: var(--creme);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-cereja);
+}
+.confirmText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.confirmText strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+}
+.confirmText span {
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+/* Linhas de agendamento */
+.booking {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 11px 12px;
+}
+.bookingMuted {
+  opacity: 0.78;
+}
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 46px;
+}
+.timeH {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: var(--grafite);
+}
+.timeDur {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+.bookingInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  line-height: 1.25;
+}
+.bookingInfo strong {
+  font-size: 0.9rem;
+  color: var(--grafite);
+}
+.bookingInfo span {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+.paid {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cereja);
+  background: var(--cereja-tint);
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.totalBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--grafite);
+  color: var(--creme);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-top: 2px;
+}
+.totalBar span {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+.totalBar strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Etiquetas flutuantes */
+.chip {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-pill);
+  padding: 8px 13px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--grafite);
+}
+.chipTop {
+  top: 46px;
+  right: -18px;
+  animation: float 5s ease-in-out infinite;
+}
+.chipBottom {
+  bottom: 60px;
+  left: -22px;
+  animation: float 5s ease-in-out infinite 1.2s;
+}
+.chipDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cereja);
+}
+.chipUp {
+  color: var(--cereja);
+  font-weight: 800;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chipTop,
+  .chipBottom {
+    animation: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .chipTop {
+    right: -6px;
+  }
+  .chipBottom {
+    left: -6px;
+  }
+}

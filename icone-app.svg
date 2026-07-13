@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Ícone do app Sinal">
+  <!-- fundo -->
+  <rect width="512" height="512" rx="116" fill="#8E1F3B"/>
+  <!-- brilho sutil de laca no topo -->
+  <path d="M0 0 h512 v170 q-256 70 -512 0 Z" fill="#A03050" opacity="0.35"/>
+  <!-- selo em negativo -->
+  <g transform="translate(256,256)">
+    <circle r="168" fill="none" stroke="#FAF6F2" stroke-width="12" stroke-dasharray="7 24" stroke-linecap="round"/>
+    <circle r="126" fill="#FAF6F2"/>
+    <path d="M -58 6 L -18 46 L 62 -46" fill="none" stroke="#8E1F3B" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

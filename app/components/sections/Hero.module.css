@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  padding-bottom: var(--section-y);
+  overflow: hidden;
+}
+
+/* Fundo: wash quente com um leve brilho cereja */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 55% at 78% 12%,
+      var(--cereja-tint) 0%,
+      transparent 60%
+    ),
+    radial-gradient(50% 45% at 10% 0%, var(--creme-2) 0%, transparent 55%);
+  z-index: -1;
+}
+
+.inner {
+  display: grid;
+  gap: clamp(2rem, 1rem + 5vw, 4rem);
+  align-items: center;
+}
+
+/* permite que os tracks encolham abaixo do tamanho da palavra mais longa
+   (senão "comparecimento" força o grid a ficar mais largo que a tela) */
+.inner > * {
+  min-width: 0;
+}
+
+.copy {
+  max-width: 620px;
+  min-width: 0;
+}
+
+.headline {
+  margin-top: var(--space-4);
+}
+
+.sub {
+  margin-top: var(--space-5);
+  max-width: 46ch;
+}
+
+.actions {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.trust {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+}
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.art {
+  display: flex;
+  justify-content: center;
+  padding-block: var(--space-4);
+}
+
+/* Entrada do hero: fade-up em CSS puro, com stagger. Não esconde o conteúdo
+   se a animação não rodar (reduced-motion neutraliza). */
+.intro {
+  animation: hero-in 0.7s var(--ease-out) both;
+}
+.copy .intro:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.copy .intro:nth-child(2) {
+  animation-delay: 0.09s;
+}
+.copy .intro:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.copy .intro:nth-child(4) {
+  animation-delay: 0.23s;
+}
+.copy .intro:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.art.intro {
+  animation-delay: 0.18s;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    animation: none;
+  }
+}
+
+/* Desktop: duas colunas, arte à direita */
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+  .art {
+    justify-content: flex-end;
+  }
+}

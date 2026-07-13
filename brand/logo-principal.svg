@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="560" height="160" role="img" aria-label="Sinal">
+  <!-- Selo do Sinal -->
+  <g transform="translate(80,80)">
+    <!-- perfuração externa (serrilha de carimbo) -->
+    <circle r="58" fill="none" stroke="#8E1F3B" stroke-width="4" stroke-dasharray="2.5 8.2" stroke-linecap="round"/>
+    <!-- disco do selo -->
+    <circle r="44" fill="#8E1F3B"/>
+    <!-- check do comparecimento -->
+    <path d="M -20 2 L -6 16 L 22 -16" fill="none" stroke="#FAF6F2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="168" y="104" font-family="'Bricolage Grotesque','Arial Black',sans-serif" font-weight="800" font-size="84" letter-spacing="-3" fill="#1F1A1C">sinal</text>
+  <!-- ponto-selo no final do wordmark -->
+  <circle cx="392" cy="96" r="9" fill="#8E1F3B"/>
+</svg>

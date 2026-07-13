@@ -1,0 +1,76 @@
+.problem {
+  background: var(--grafite);
+  color: var(--creme);
+  padding-block: var(--section-y);
+}
+
+.head {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--creme);
+}
+.eyebrow::before {
+  background: var(--creme);
+}
+
+.title {
+  color: var(--creme);
+  margin-top: var(--space-4);
+}
+
+.hl {
+  color: #f0a9b9; /* cereja clareado para contraste AA sobre grafite */
+}
+
+.lead {
+  margin-top: var(--space-5);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  color: rgba(250, 246, 242, 0.72);
+  max-width: 54ch;
+}
+
+.grid {
+  margin-top: clamp(2rem, 1rem + 3vw, 3.5rem);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  background: rgba(250, 246, 242, 0.05);
+  border: 1px solid rgba(250, 246, 242, 0.12);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--cereja);
+  opacity: 0.9;
+}
+
+.cardTitle {
+  color: var(--creme);
+  font-size: var(--fs-h4);
+}
+
+.cardText {
+  margin-top: var(--space-3);
+  color: rgba(250, 246, 242, 0.66);
+  font-size: 1rem;
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

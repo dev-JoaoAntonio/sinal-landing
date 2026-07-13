@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" width="560" height="340">
+  <!-- Variante mono positiva (grafite sobre claro) -->
+  <g transform="translate(0,0)">
+    <g transform="translate(80,80)">
+      <circle r="58" fill="none" stroke="#1F1A1C" stroke-width="4" stroke-dasharray="2.5 8.2" stroke-linecap="round"/>
+      <circle r="44" fill="#1F1A1C"/>
+      <path d="M -20 2 L -6 16 L 22 -16" fill="none" stroke="#FAF6F2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="168" y="104" font-family="'Bricolage Grotesque','Arial Black',sans-serif" font-weight="800" font-size="84" letter-spacing="-3" fill="#1F1A1C">sinal</text>
+    <circle cx="392" cy="96" r="9" fill="#1F1A1C"/>
+  </g>
+  <!-- Variante negativa (sobre fundo cereja) -->
+  <g transform="translate(0,170)">
+    <rect x="0" y="0" width="560" height="170" fill="#8E1F3B"/>
+    <g transform="translate(80,85)">
+      <circle r="58" fill="none" stroke="#FAF6F2" stroke-width="4" stroke-dasharray="2.5 8.2" stroke-linecap="round"/>
+      <circle r="44" fill="#FAF6F2"/>
+      <path d="M -20 2 L -6 16 L 22 -16" fill="none" stroke="#8E1F3B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="168" y="109" font-family="'Bricolage Grotesque','Arial Black',sans-serif" font-weight="800" font-size="84" letter-spacing="-3" fill="#FAF6F2">sinal</text>
+    <circle cx="392" cy="101" r="9" fill="#FAF6F2"/>
+  </g>
+</svg>

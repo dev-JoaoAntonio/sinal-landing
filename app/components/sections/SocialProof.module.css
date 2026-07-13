@@ -1,0 +1,138 @@
+.proof {
+  background: var(--bg-alt);
+}
+
+.head {
+  max-width: 620px;
+  margin-bottom: clamp(2rem, 1rem + 3vw, 3.25rem);
+}
+.head h2 {
+  margin-top: var(--space-4);
+}
+.head .lead {
+  margin-top: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.exampleTag {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--creme-2);
+  border: 1px dashed var(--line-strong);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.quote {
+  font-size: 1.05rem;
+  line-height: var(--lh-snug);
+  color: var(--text);
+  /* aspas decorativas */
+  position: relative;
+  padding-top: var(--space-4);
+}
+.quote::before {
+  content: "“";
+  position: absolute;
+  top: -0.35em;
+  left: -0.05em;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--cereja-tint-2);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cereja-tint-2), var(--creme-2));
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.name {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--grafite);
+}
+.role {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* Faixa de selos de pagamento */
+.trustStrip {
+  margin-top: clamp(2rem, 1rem + 3vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+}
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.trustItem svg {
+  color: var(--cereja);
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.dot:last-of-type {
+  display: none;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .dot {
+    display: none;
+  }
+  .trustStrip {
+    border-radius: var(--radius-lg);
+    flex-direction: column;
+  }
+}

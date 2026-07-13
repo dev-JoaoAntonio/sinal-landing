@@ -1,0 +1,76 @@
+.banner {
+  /* Seção normal (sem sobreposição): faixa grafite com bordas diagonais.
+     O fundo da seção é a MESMA cor do container de cima (--bg-alt), então é ela
+     que aparece atrás do preto, nas diagonais. */
+  position: relative;
+  isolation: isolate;
+  overflow: hidden; /* contém as fitas do carrossel rotacionadas */
+  background: var(--bg-alt);
+  color: var(--creme);
+  /* --slant = 6vw (sem clamp) mantém o ÂNGULO constante em qualquer largura,
+     então o carrossel rotacionado (--angle) casa com a diagonal sempre. */
+  --slant: 6vw;
+  --angle: 3.45deg; /* ≈ atan(0.06) */
+  --edge-inset: 15px; /* empurra a fita pra dentro do grafite */
+  /* padding extra por causa das diagonais comerem espaço nas pontas */
+  padding-block: calc(clamp(3.5rem, 2.5rem + 5vw, 7rem) + var(--slant));
+}
+
+/* A faixa preta em si — cortada nas diagonais, deixando o fundo (--bg-alt) à mostra */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--grafite);
+  clip-path: polygon(
+    0 var(--slant),
+    100% 0,
+    100% calc(100% - var(--slant)),
+    0 100%
+  );
+}
+
+/* Carrossel nas bordas: rotacionado no mesmo ângulo da diagonal, hugando a borda */
+.marqueeTop,
+.marqueeBottom {
+  position: absolute;
+  left: 50%;
+  width: 118%; /* folga para as pontas cobrirem os cantos ao rotacionar */
+  z-index: 1;
+  pointer-events: none;
+}
+.marqueeTop {
+  top: calc(var(--slant) / 2 + var(--edge-inset));
+  transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
+}
+.marqueeBottom {
+  bottom: calc(var(--slant) / 2 + var(--edge-inset));
+  transform: translate(-50%, 50%) rotate(calc(-1 * var(--angle)));
+}
+
+/* Palco centralizado com folga extra para o tilt/sombra do botão (escalado) não
+   cortarem. --scale é herdado pelo botão. Cresce com a viewport. */
+.stage {
+  --scale: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 48px 20px;
+}
+
+@media (min-width: 560px) {
+  .stage {
+    --scale: 1.7;
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stage {
+    --scale: 2;
+    min-height: 340px;
+    padding: 64px 20px;
+  }
+}

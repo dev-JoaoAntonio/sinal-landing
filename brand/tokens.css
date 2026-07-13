@@ -1,0 +1,104 @@
+/* =============================================================
+   SINAL — Design Tokens (fonte de verdade da aparência da marca)
+   Importado por app/globals.css. Não estilize com hex soltos;
+   consuma sempre estas variáveis.
+   ============================================================= */
+
+:root {
+  /* ---------- Cor: paleta da marca ---------- */
+  --cereja: #8e1f3b;        /* cor primária — a marca */
+  --cereja-dark: #731830;   /* hover / pressed */
+  --cereja-darker: #5c1327; /* texto sobre creme quando precisa de contraste extra */
+  --laca: #a03050;          /* brilho / realce (usado no ícone do app) */
+  --cereja-tint: #f7e9ed;   /* wash claro de cereja para fundos suaves */
+  --cereja-tint-2: #f1d9df; /* wash um pouco mais forte */
+
+  --grafite: #1f1a1c;       /* tinta / texto principal */
+  --creme: #faf6f2;         /* fundo padrão da marca */
+  --creme-2: #f4ece3;       /* seção alternada / cards sobre creme */
+  --white: #ffffff;
+
+  /* Neutros quentes derivados do grafite */
+  --ink: var(--grafite);
+  --ink-muted: #6b6167;     /* texto secundário */
+  --ink-soft: #8b8288;      /* legendas, hints */
+  --line: #e9ddd2;          /* bordas quentes sobre creme */
+  --line-strong: #ddccbe;
+
+  /* ---------- Semântica de superfície ---------- */
+  --bg: var(--creme);
+  --bg-alt: var(--creme-2);
+  --surface: var(--white);
+  --surface-ink: var(--grafite); /* seções escuras */
+  --text: var(--grafite);
+  --text-muted: var(--ink-muted);
+  --text-on-cereja: var(--creme);
+  --text-on-ink: var(--creme);
+  --brand: var(--cereja);
+  --brand-contrast: var(--creme);
+  --focus: var(--laca);
+
+  /* ---------- Tipografia ---------- */
+  /* Fontes injetadas via next/font em app/layout.tsx */
+  --font-display: var(--font-display-var, "Bricolage Grotesque", "Arial Black", sans-serif);
+  --font-sans: var(--font-sans-var, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif);
+
+  --tracking-display: -0.03em; /* wordmark usa letter-spacing negativo */
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.02em;
+  --tracking-eyebrow: 0.14em;
+
+  /* Escala de tipo fluida (mobile-first, cresce com a viewport) */
+  --fs-eyebrow: 0.78rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1.0625rem;                                   /* ~17px, confortável no mobile */
+  --fs-lead: clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem);
+  --fs-h4: clamp(1.15rem, 1.05rem + 0.5vw, 1.375rem);
+  --fs-h3: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
+  --fs-h2: clamp(1.9rem, 1.45rem + 2.2vw, 3.1rem);
+  --fs-h1: clamp(2.15rem, 1.5rem + 3.4vw, 4.5rem);
+  --fs-display: clamp(2.9rem, 1.8rem + 5.2vw, 5.5rem);
+
+  --lh-tight: 1.04;
+  --lh-heading: 1.1;
+  --lh-snug: 1.35;
+  --lh-body: 1.6;
+
+  /* ---------- Espaçamento ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --section-y: clamp(3.5rem, 2.5rem + 4vw, 7rem); /* padding vertical de seção */
+  --container: 1140px;
+  --container-narrow: 780px;
+  --gutter: clamp(1.15rem, 0.6rem + 2.5vw, 2.5rem);
+
+  /* ---------- Raios (o ícone do app é um quadrado super-arredondado) ---------- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---------- Sombras (quentes, discretas) ---------- */
+  --shadow-sm: 0 1px 2px rgba(31, 26, 28, 0.06), 0 2px 6px rgba(31, 26, 28, 0.05);
+  --shadow-md: 0 6px 16px rgba(31, 26, 28, 0.08), 0 2px 6px rgba(31, 26, 28, 0.05);
+  --shadow-lg: 0 20px 45px rgba(31, 26, 28, 0.14), 0 6px 14px rgba(31, 26, 28, 0.06);
+  --shadow-cereja: 0 14px 30px rgba(142, 31, 59, 0.28);
+
+  /* ---------- Movimento ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 500ms;
+
+  --z-header: 100;
+}
