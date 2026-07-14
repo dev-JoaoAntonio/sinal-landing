@@ -6,6 +6,8 @@ import {
   IconShield,
   IconPhoneOff,
 } from "../icons";
+import { Phone3D } from "../Phone3D";
+import { PRINTS } from "@/lib/prints";
 import styles from "./Features.module.css";
 
 const features = [
@@ -45,13 +47,24 @@ export function Features() {
   return (
     <section className={`section ${styles.features}`} id="beneficios">
       <div className="container">
-        <div className={styles.head} data-reveal>
-          <span className="eyebrow">Tudo em um lugar</span>
-          <h2>O que você ganha com o Sinal</h2>
-          <p className="lead">
-            As ferramentas do dia a dia do balcão, sem complicação e sem
-            mensalidade de sistema caro.
-          </p>
+        <div className={styles.intro}>
+          <div className={styles.head} data-reveal>
+            <span className="eyebrow">Tudo em um lugar</span>
+            <h2>O que você ganha com o Sinal</h2>
+            <p className="lead">
+              As ferramentas do dia a dia do balcão, sem complicação e sem
+              mensalidade de sistema caro.
+            </p>
+          </div>
+          <div className={styles.introPhone} data-reveal data-reveal-delay="120">
+            <Phone3D
+              src={PRINTS.features.src}
+              label={PRINTS.features.label}
+              alt="Painel do profissional no Sinal"
+              tilt="left"
+              className={styles.featPhone}
+            />
+          </div>
         </div>
 
         <ul className={styles.grid}>

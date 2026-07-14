@@ -1,0 +1,48 @@
+.showcase {
+  background: var(--bg);
+  overflow: hidden; /* segura o leve stagger/tilt dos celulares */
+}
+
+.head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+.head h2 {
+  margin-top: var(--space-4);
+}
+.head .lead {
+  margin-top: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
+  justify-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  max-width: 300px;
+}
+
+.caption {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 32ch;
+  font-size: 0.98rem;
+  line-height: var(--lh-snug);
+}
+
+@media (min-width: 780px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  /* eleva o celular do meio pra dar um ar de galeria */
+  .item:nth-child(2) {
+    transform: translateY(-36px);
+  }
+}

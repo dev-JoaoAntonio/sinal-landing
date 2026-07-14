@@ -74,6 +74,10 @@
   padding-block: var(--space-4);
 }
 
+.heroPhone {
+  --phone-max: 330px;
+}
+
 /* Entrada do hero: fade-up em CSS puro, com stagger. Não esconde o conteúdo
    se a animação não rodar (reduced-motion neutraliza). */
 .intro {

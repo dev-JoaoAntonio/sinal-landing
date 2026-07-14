@@ -4,6 +4,7 @@ import { Hero } from "./components/sections/Hero";
 import { Problem } from "./components/sections/Problem";
 import { HowItWorks } from "./components/sections/HowItWorks";
 import { Features } from "./components/sections/Features";
+import { Showcase } from "./components/sections/Showcase";
 import { Pricing } from "./components/sections/Pricing";
 import { SocialProof } from "./components/sections/SocialProof";
 import { CtaBanner } from "./components/sections/CtaBanner";
@@ -70,9 +71,10 @@ export default function Home() {
         <Problem />
         <HowItWorks />
         <Features />
+        <Showcase />
         <Pricing />
-        <SocialProof />
         <CtaBanner />
+        <SocialProof />
         <Faq />
         <FinalCta />
       </main>

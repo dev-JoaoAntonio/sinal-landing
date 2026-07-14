@@ -1,11 +1,11 @@
 .banner {
   /* Seção normal (sem sobreposição): faixa grafite com bordas diagonais.
-     O fundo da seção é a MESMA cor do container de cima (--bg-alt), então é ela
-     que aparece atrás do preto, nas diagonais. */
+     O fundo da seção é a MESMA cor do container de cima (Planos = --bg), então é
+     ela que aparece atrás do preto, nas diagonais. */
   position: relative;
   isolation: isolate;
   overflow: hidden; /* contém as fitas do carrossel rotacionadas */
-  background: var(--bg-alt);
+  background: var(--bg);
   color: var(--creme);
   /* --slant = 6vw (sem clamp) mantém o ÂNGULO constante em qualquer largura,
      então o carrossel rotacionado (--angle) casa com a diagonal sempre. */
@@ -13,7 +13,9 @@
   --angle: 3.45deg; /* ≈ atan(0.06) */
   --edge-inset: 15px; /* empurra a fita pra dentro do grafite */
   /* padding extra por causa das diagonais comerem espaço nas pontas */
-  padding-block: calc(clamp(3.5rem, 2.5rem + 5vw, 7rem) + var(--slant));
+  padding-block: calc(clamp(1.75rem, 1rem + 2.5vw, 3.25rem) + var(--slant));
+  /* respiro entre o CTA e a seção "Confiança" logo abaixo */
+  margin-bottom: clamp(3rem, 2rem + 4vw, 6.5rem);
 }
 
 /* A faixa preta em si — cortada nas diagonais, deixando o fundo (--bg-alt) à mostra */
@@ -56,21 +58,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
-  padding: 48px 20px;
+  min-height: 150px;
+  padding: 30px 20px;
 }
 
 @media (min-width: 560px) {
   .stage {
-    --scale: 1.7;
-    min-height: 280px;
+    --scale: 1.6;
+    min-height: 190px;
   }
 }
 
 @media (min-width: 1024px) {
   .stage {
-    --scale: 2;
-    min-height: 340px;
-    padding: 64px 20px;
+    --scale: 1.9;
+    min-height: 230px;
+    padding: 40px 20px;
   }
 }

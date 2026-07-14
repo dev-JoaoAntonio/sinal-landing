@@ -1,4 +1,5 @@
-import { Seal } from "../Seal";
+import { Phone3D } from "../Phone3D";
+import { PRINTS } from "@/lib/prints";
 import styles from "./HowItWorks.module.css";
 
 const steps = [
@@ -16,7 +17,6 @@ const steps = [
     n: "3",
     title: "Ele aparece — ou o sinal fica com você",
     text: "Compareceu? O sinal abate no valor final. Faltou? O dinheiro é seu. Do seu jeito, sem cobrança constrangedora.",
-    isSeal: true,
   },
 ];
 
@@ -40,12 +40,15 @@ export function HowItWorks() {
               data-reveal
               data-reveal-delay={i * 110}
             >
-              <div className={styles.badge}>
-                {s.isSeal ? (
-                  <Seal size={56} tone="brand" animated />
-                ) : (
-                  <span className={styles.num}>{s.n}</span>
-                )}
+              <div className={styles.visual}>
+                <span className={styles.num}>{s.n}</span>
+                <Phone3D
+                  src={PRINTS.steps[i].src}
+                  label={PRINTS.steps[i].label}
+                  alt={s.title}
+                  tilt="none"
+                  className={styles.stepPhone}
+                />
               </div>
               <h3 className={styles.stepTitle}>{s.title}</h3>
               <p className={styles.stepText}>{s.text}</p>

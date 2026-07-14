@@ -15,32 +15,45 @@
 .steps {
   margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
   display: grid;
-  gap: clamp(2rem, 1rem + 3vw, 3rem);
-  counter-reset: step;
+  gap: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
   position: relative;
 }
 
 .step {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.badge {
-  width: 72px;
-  height: 72px;
-  border-radius: var(--radius-lg);
-  display: grid;
-  place-items: center;
-  background: var(--cereja-tint);
-  border: 1px solid var(--cereja-tint-2);
-  margin-bottom: var(--space-4);
+/* Número do passo + celular */
+.visual {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.stepPhone {
+  --phone-max: 190px;
 }
 
 .num {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cereja);
+  color: var(--creme);
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2rem;
-  color: var(--cereja);
+  font-size: 1.35rem;
   line-height: 1;
+  box-shadow: var(--shadow-md);
 }
 
 .stepTitle {
@@ -50,34 +63,21 @@
 .stepText {
   margin-top: var(--space-3);
   color: var(--text-muted);
-  max-width: 40ch;
+  max-width: 34ch;
 }
 
-/* Desktop: 3 colunas com linha conectora entre os passos */
 @media (min-width: 820px) {
   .steps {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
+    align-items: start;
   }
-  /* Linha pontilhada ligando os badges (evoca a serrilha do selo) */
-  .steps::before {
-    content: "";
-    position: absolute;
-    top: 36px;
-    left: 12%;
-    right: 12%;
-    height: 2px;
-    background-image: linear-gradient(
-      to right,
-      var(--line-strong) 0 8px,
-      transparent 8px 18px
-    );
-    background-size: 18px 2px;
-    background-repeat: repeat-x;
-    z-index: 0;
-  }
-  .badge {
-    position: relative;
-    z-index: 1;
+}
+
+/* Folga embaixo para o celular da seção seguinte (Recursos) subir por aqui
+   sem encostar no texto do 3º passo. */
+@media (min-width: 860px) {
+  .how {
+    padding-bottom: calc(var(--section-y) + 130px);
   }
 }

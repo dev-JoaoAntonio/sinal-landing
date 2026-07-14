@@ -37,6 +37,7 @@ export const CTA_LABEL = `Começar ${site.trialDias} dias grátis`;
 export const NAV_LINKS = [
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#beneficios", label: "Recursos" },
+  { href: "#por-dentro", label: "Por dentro" },
   { href: "#planos", label: "Planos" },
   { href: "#faq", label: "Dúvidas" },
 ] as const;
