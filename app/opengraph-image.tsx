@@ -9,7 +9,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const CEREJA = "#8e1f3b";
-const CREME = "#faf6f2";
+const CREME = "#f6f1ea";
 
 /* Selo desenhado como SVG e embutido como imagem (Satori renderiza data-URI). */
 const seloSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">

@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { RevealInit } from "./components/RevealInit";
 import { Hero } from "./components/sections/Hero";
+import { InfoStrip } from "./components/sections/InfoStrip";
 import { Problem } from "./components/sections/Problem";
 import { HowItWorks } from "./components/sections/HowItWorks";
 import { Features } from "./components/sections/Features";
@@ -68,12 +69,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <InfoStrip />
         <Problem />
         <HowItWorks />
         <Features />
+        <CtaBanner />
         <Showcase />
         <Pricing />
-        <CtaBanner />
         <SocialProof />
         <Faq />
         <FinalCta />

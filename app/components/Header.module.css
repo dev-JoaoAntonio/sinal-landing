@@ -16,6 +16,8 @@
 }
 
 .bar {
+  /* Usa o container do conteúdo (1140): dá margem nas laterais e alinha
+     nav/botão com as seções abaixo. Mobile: logo à esquerda, burger à direita. */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,15 +34,17 @@
 .nav {
   display: none;
   align-items: center;
-  gap: clamp(1rem, 0.4rem + 1.6vw, 2.25rem);
+  flex-wrap: nowrap;
+  gap: clamp(0.55rem, 0.2rem + 0.8vw, 1.25rem);
 }
 
 .link {
   font-weight: 600;
-  font-size: 0.975rem;
+  font-size: 0.86rem;
   color: var(--ink-muted);
   padding: 0.4rem 0.1rem;
   position: relative;
+  white-space: nowrap;
   transition: color var(--dur) var(--ease-out);
 }
 .link::after {
@@ -67,11 +71,9 @@
   gap: var(--space-3);
 }
 
-.cta {
+/* Botão animado (ArrowButton) no header — só no desktop */
+.headerCta {
   display: none;
-  padding: 0.7rem 1.2rem;
-  min-height: 46px;
-  box-shadow: none;
 }
 
 /* Hambúrguer */
@@ -104,6 +106,32 @@
 }
 .header[data-open="true"] .burger span:nth-child(3) {
   transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* No topo (não rolado), o header fica sobre o hero cereja → elementos claros.
+   Ao rolar, cai no visual creme padrão. */
+.header:not(.scrolled) .link {
+  color: rgba(246, 241, 234, 0.85);
+}
+.header:not(.scrolled) .link:hover {
+  color: var(--creme);
+}
+.header:not(.scrolled) .link::after {
+  background: var(--creme);
+}
+/* Sobre o hero cereja: inverte o esquema do botão (círculo creme, texto claro) */
+.header:not(.scrolled) .headerCta {
+  --btn-circle: var(--creme);
+  --btn-arrow: var(--cereja);
+  --btn-text: var(--creme);
+  --btn-text-hover: var(--cereja);
+}
+.header:not(.scrolled) .burger {
+  background: rgba(246, 241, 234, 0.14);
+  border-color: rgba(246, 241, 234, 0.45);
+}
+.header:not(.scrolled) .burger span {
+  background: var(--creme);
 }
 
 /* Menu mobile (overlay) */
@@ -153,13 +181,24 @@
   }
 }
 
-/* Desktop */
-@media (min-width: 860px) {
+/* Desktop (largo o bastante pra nav + logo central + ações caberem) */
+@media (min-width: 1000px) {
+  /* nav à esquerda + ações à direita (space-between); logo absoluta no centro
+     exato da barra, independente da largura da nav/ações. */
+  .bar {
+    position: relative;
+  }
   .nav {
     display: flex;
   }
-  .cta {
-    display: inline-flex;
+  .brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .headerCta {
+    display: inline-block;
   }
   .burger {
     display: none;

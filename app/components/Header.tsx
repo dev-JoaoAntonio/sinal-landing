@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { ArrowButton } from "./ArrowButton";
 import { CTA_HREF, CTA_LABEL, NAV_LINKS } from "@/lib/site";
 import styles from "./Header.module.css";
 
@@ -39,10 +40,7 @@ export function Header() {
       data-open={open}
     >
       <div className={`container ${styles.bar}`}>
-        <a href="#top" className={styles.brand} aria-label="Sinal — início">
-          <Logo height={30} />
-        </a>
-
+        {/* Esquerda: navegação */}
         <nav className={styles.nav} aria-label="Navegação principal">
           {NAV_LINKS.map((l) => (
             <a key={l.href} href={l.href} className={styles.link}>
@@ -51,10 +49,20 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Centro: logo */}
+        <a href="#top" className={styles.brand} aria-label="Sinal — início">
+          {/* No topo, o header fica sobre o hero cereja → logo claro; ao rolar
+              vira header creme → logo escuro. */}
+          <Logo height={42} tone={scrolled ? "onLight" : "onDark"} />
+        </a>
+
+        {/* Direita: botão (e o hambúrguer no mobile) */}
         <div className={styles.actions}>
-          <a href={CTA_HREF} className={`btn btn-primary ${styles.cta}`}>
-            {CTA_LABEL}
-          </a>
+          <ArrowButton
+            href={CTA_HREF}
+            label={CTA_LABEL}
+            className={styles.headerCta}
+          />
           <button
             className={styles.burger}
             aria-label={open ? "Fechar menu" : "Abrir menu"}

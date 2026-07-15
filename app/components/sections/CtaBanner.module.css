@@ -1,11 +1,11 @@
 .banner {
   /* Seção normal (sem sobreposição): faixa grafite com bordas diagonais.
-     O fundo da seção é a MESMA cor do container de cima (Planos = --bg), então é
-     ela que aparece atrás do preto, nas diagonais. */
+     O fundo da seção é a MESMA cor do container de cima (Recursos = --bg-alt),
+     então é ela que aparece atrás do preto, nas diagonais. */
   position: relative;
   isolation: isolate;
   overflow: hidden; /* contém as fitas do carrossel rotacionadas */
-  background: var(--bg);
+  background: var(--bg-alt);
   color: var(--creme);
   /* --slant = 6vw (sem clamp) mantém o ÂNGULO constante em qualquer largura,
      então o carrossel rotacionado (--angle) casa com a diagonal sempre. */

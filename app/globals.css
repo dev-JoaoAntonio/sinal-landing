@@ -97,9 +97,9 @@ h4 {
   letter-spacing: var(--tracking-tight);
   color: var(--text);
   text-wrap: balance;
-  /* Palavras longas (ex.: "comparecimento") quebram em vez de estourar a tela */
+  /* Palavras longas (ex.: "comparecimento") quebram SEM hífen, só se não couberem.
+     Nada de hyphens:auto — ele quebrava "ganha" em "ga-nha". */
   overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 h1 {

@@ -1,0 +1,79 @@
+/* O wrap tem altura ZERO e fica exatamente na fronteira hero → seção de baixo:
+   assim o hero encosta direto na seção escura (SEM gap). O card flutua centrado
+   nessa linha, sobrepondo os dois. */
+.wrap {
+  position: relative;
+  height: 0;
+  z-index: 5;
+}
+.floater {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateY(-50%); /* centra o card na fronteira */
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  /* card mais alto */
+  padding: clamp(2.75rem, 2rem + 3vw, 4.5rem) clamp(1.5rem, 1rem + 2vw, 2.75rem);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--cereja-tint);
+  color: var(--cereja);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--grafite);
+}
+.text {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 760px) {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  /* divisórias sutis entre os itens */
+  .item + .item {
+    border-left: 1px solid var(--line);
+    padding-left: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  }
+  .item {
+    padding-right: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  }
+  .item:last-child {
+    padding-right: 0;
+  }
+}

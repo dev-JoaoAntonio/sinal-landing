@@ -40,7 +40,7 @@
   margin-top: var(--space-4);
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
-  color: rgba(250, 246, 242, 0.85);
+  color: rgba(246, 241, 234, 0.85);
 }
 .points {
   margin-top: var(--space-5);
@@ -52,7 +52,7 @@
   position: relative;
   padding-left: 1.6rem;
   font-weight: 600;
-  color: rgba(250, 246, 242, 0.92);
+  color: rgba(246, 241, 234, 0.92);
 }
 .points li::before {
   content: "";

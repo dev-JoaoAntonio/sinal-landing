@@ -9,8 +9,6 @@
  * (ex.: 1170×2532 ou 1080×2340), PNG/JPG/WebP otimizado.
  */
 export const PRINTS = {
-  hero: { src: "/prints/hero.png", label: "Agenda do dia" },
-
   // Seção "Veja por dentro" (galeria)
   showcase: [
     { src: "/prints/agenda.png", label: "Sua agenda online" },

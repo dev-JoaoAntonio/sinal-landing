@@ -81,7 +81,7 @@
   width: 120px;
   height: 300px;
   margin: auto;
-  background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
+  background: linear-gradient(to right, transparent 0%, var(--creme) 50%, transparent 100%);
   animation: spin 3s linear infinite;
   animation-play-state: paused;
 }
@@ -365,7 +365,7 @@
 }
 @keyframes path {
   from {
-    stroke: white;
+    stroke: var(--creme);
   }
   to {
     stroke-dashoffset: -480;

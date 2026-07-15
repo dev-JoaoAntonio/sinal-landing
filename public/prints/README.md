@@ -6,7 +6,6 @@ some e a print aparece (não precisa mexer no código).
 
 | Arquivo | Onde aparece |
 | --- | --- |
-| `hero.png` | Hero (topo) |
 | `agenda.png` | Seção "Veja por dentro" — 1º celular |
 | `sinal.png` | Seção "Veja por dentro" — 2º celular |
 | `faturamento.png` | Seção "Veja por dentro" — 3º celular |
@@ -21,3 +20,6 @@ gigantes — comprima antes).
 
 Os nomes/caminhos ficam centralizados em [`lib/prints.ts`](../../lib/prints.ts),
 caso queira renomear ou adicionar telas.
+
+> A **foto de fundo do hero** é outra coisa: fica em `public/hero-bg.jpg`
+> (foto de pessoas, não print de celular).

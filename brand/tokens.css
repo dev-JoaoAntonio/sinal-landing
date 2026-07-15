@@ -14,9 +14,9 @@
   --cereja-tint-2: #f1d9df; /* wash um pouco mais forte */
 
   --grafite: #1f1a1c;       /* tinta / texto principal */
-  --creme: #faf6f2;         /* fundo padrão da marca */
-  --creme-2: #f4ece3;       /* seção alternada / cards sobre creme */
-  --white: #ffffff;
+  --creme: #f6f1ea;         /* off-white pastel — fundo padrão + texto claro */
+  --creme-2: #efe7db;       /* seção alternada / cards sobre creme */
+  --white: #fdfaf4;         /* off-white suave (surfaces) — sem branco puro */
 
   /* Neutros quentes derivados do grafite */
   --ink: var(--grafite);
@@ -101,4 +101,5 @@
   --dur-slow: 500ms;
 
   --z-header: 100;
+  --header-h: 72px; /* altura da barra do header (deve casar com Header .bar) */
 }

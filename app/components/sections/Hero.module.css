@@ -1,49 +1,83 @@
 .hero {
   position: relative;
-  padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem);
-  padding-bottom: var(--section-y);
+  /* Foto de fundo do hero. Solte o arquivo em public/hero-bg.jpg; se não existir,
+     cai no fundo cereja (fallback). */
+  --hero-image: url("/hero-bg.jpg");
+  /* Sobe atrás do header (transparente no topo), pra a imagem ficar por trás dele;
+     o padding-top recompõe o espaço pro conteúdo não sumir. */
+  margin-top: calc(-1 * var(--header-h));
+  padding-top: calc(var(--header-h) + clamp(2rem, 1.5rem + 3vw, 4rem));
+  /* padding inferior maior: afasta os bullets de confiança do card (InfoStrip) */
+  padding-bottom: clamp(4.5rem, 3rem + 5vw, 8rem);
+  min-height: clamp(600px, 82vh, 840px);
+  display: flex;
+  align-items: center;
+  color: var(--creme);
   overflow: hidden;
 }
 
-/* Fundo: wash quente com um leve brilho cereja */
+/* Fundo: foto + gradiente CEREJA (deixa a copy branca legível e tinge a cena). */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      60% 55% at 78% 12%,
-      var(--cereja-tint) 0%,
-      transparent 60%
-    ),
-    radial-gradient(50% 45% at 10% 0%, var(--creme-2) 0%, transparent 55%);
   z-index: -1;
+  background-color: var(--cereja); /* base/fallback se a imagem faltar */
+  background-image:
+    /* topo — vermelho mais escuro (cereja bem fechado) descendo mais pela tela */
+    linear-gradient(
+      to bottom,
+      rgba(54, 12, 22, 0.85) 0%,
+      rgba(54, 12, 22, 0.5) 22%,
+      rgba(54, 12, 22, 0.2) 44%,
+      rgba(54, 12, 22, 0) 65%
+    ),
+    /* esquerda — cereja sólido atrás da copy, some pra revelar a foto à direita */
+    linear-gradient(
+      to right,
+      var(--cereja) 0%,
+      rgba(142, 31, 59, 0.94) 30%,
+      rgba(142, 31, 59, 0.6) 52%,
+      rgba(142, 31, 59, 0.15) 78%,
+      rgba(142, 31, 59, 0) 96%
+    ),
+    var(--hero-image, none);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 
 .inner {
-  display: grid;
-  gap: clamp(2rem, 1rem + 5vw, 4rem);
-  align-items: center;
-}
-
-/* permite que os tracks encolham abaixo do tamanho da palavra mais longa
-   (senão "comparecimento" força o grid a ficar mais largo que a tela) */
-.inner > * {
-  min-width: 0;
+  position: relative;
 }
 
 .copy {
-  max-width: 620px;
+  max-width: 600px;
   min-width: 0;
+}
+
+/* Eyebrow em claro (sobre o cereja) */
+.eyebrow {
+  color: var(--creme);
+}
+.eyebrow::before {
+  background: var(--creme);
 }
 
 .headline {
   margin-top: var(--space-4);
+  color: var(--creme);
+}
+
+/* Destaque "Cobre o sinal": tom cereja clareado, contrasta no fundo cereja */
+.hl {
+  color: #f2a9b9;
 }
 
 .sub {
   margin-top: var(--space-5);
   max-width: 46ch;
+  color: rgba(246, 241, 234, 0.88);
 }
 
 .actions {
@@ -52,34 +86,20 @@
   flex-wrap: wrap;
   gap: var(--space-3);
 }
-
-.trust {
-  margin-top: var(--space-6);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-5);
+.ctaPrimary {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
-.trust li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-muted);
+/* botão secundário sem contorno (só texto, com leve fundo no hover) */
+.ctaGhost {
+  color: var(--creme);
+  border-color: transparent;
+  background: transparent;
+}
+.ctaGhost:hover {
+  background: rgba(246, 241, 234, 0.14);
 }
 
-.art {
-  display: flex;
-  justify-content: center;
-  padding-block: var(--space-4);
-}
-
-.heroPhone {
-  --phone-max: 330px;
-}
-
-/* Entrada do hero: fade-up em CSS puro, com stagger. Não esconde o conteúdo
-   se a animação não rodar (reduced-motion neutraliza). */
+/* Entrada do hero: fade-up em CSS puro, com stagger. */
 .intro {
   animation: hero-in 0.7s var(--ease-out) both;
 }
@@ -98,9 +118,6 @@
 .copy .intro:nth-child(5) {
   animation-delay: 0.3s;
 }
-.art.intro {
-  animation-delay: 0.18s;
-}
 
 @keyframes hero-in {
   from {
@@ -115,15 +132,5 @@
 @media (prefers-reduced-motion: reduce) {
   .intro {
     animation: none;
-  }
-}
-
-/* Desktop: duas colunas, arte à direita */
-@media (min-width: 900px) {
-  .inner {
-    grid-template-columns: 1.05fr 0.95fr;
-  }
-  .art {
-    justify-content: flex-end;
   }
 }

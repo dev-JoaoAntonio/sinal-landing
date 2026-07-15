@@ -2,6 +2,8 @@
   background: var(--grafite);
   color: var(--creme);
   padding-block: var(--section-y);
+  /* espaço extra no topo pro card do InfoStrip (que flutua na fronteira) */
+  padding-top: calc(var(--section-y) + clamp(2rem, 1.5rem + 3vw, 4rem));
 }
 
 .head {
@@ -28,7 +30,7 @@
   margin-top: var(--space-5);
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
-  color: rgba(250, 246, 242, 0.72);
+  color: rgba(246, 241, 234, 0.72);
   max-width: 54ch;
 }
 
@@ -39,8 +41,8 @@
 }
 
 .card {
-  background: rgba(250, 246, 242, 0.05);
-  border: 1px solid rgba(250, 246, 242, 0.12);
+  background: rgba(246, 241, 234, 0.05);
+  border: 1px solid rgba(246, 241, 234, 0.12);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   position: relative;
@@ -64,7 +66,7 @@
 
 .cardText {
   margin-top: var(--space-3);
-  color: rgba(250, 246, 242, 0.66);
+  color: rgba(246, 241, 234, 0.66);
   font-size: 1rem;
   line-height: var(--lh-body);
 }
